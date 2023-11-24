@@ -2,11 +2,19 @@
   "players": [
     {
       "player_name": "nour",
-      "highscore": 55
+      "highscore": 16
     },
     {
-      "player_name": "nnn",
-      "highscore": 8
+      "player_name": "hg",
+      "highscore": 10
+    },
+    {
+      "player_name": "gfdrrtr",
+      "highscore": 83
+    },
+    {
+      "player_name": "David",
+      "highscore": 145
     }
   ]
 }

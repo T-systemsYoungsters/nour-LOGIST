@@ -1,12 +1,12 @@
 import pygame
 
 class Player(pygame.sprite.Sprite):
-    def __init__(self,x,y,width,height):
+    def __init__(self, x:int, y:int ,width:int ,height:int):
         
         super().__init__()
         # Set height, width
-        self.SCREEN_WIDTH=width
-        self.SCREEN_HEIGHT=height
+        self.SCREEN_WIDTH:int = width
+        self.SCREEN_HEIGHT:int = height
 
         #load the image
         self.image = pygame.image.load("images/alien.png").convert()
@@ -14,17 +14,17 @@ class Player(pygame.sprite.Sprite):
 
         # Make our top-left corner the passed-in location.
         self.rect = self.image.get_rect()
-        self.rect.x=x
-        self.rect.y=y
+        self.rect.x = x
+        self.rect.y = y
         
         #load a sound
         self.hit_screen_borders_sound = pygame.mixer.Sound("sounds/bump.wav")
 
         # Speed in pixels per frame
-        self.x_speed_player = 0
-        self.y_speed_player = 0 
+        self.x_speed_player:int = 0
+        self.y_speed_player:int = 0 
     
-    def changespeed(self,x,y):
+    def changespeed(self, x:int, y:int):
         self.x_speed_player += x
         self.y_speed_player += y
 
