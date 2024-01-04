@@ -1,9 +1,9 @@
 import requests
 import json
+
 proxies = {
    'http': 'http://sia-lb.telekom.de:8080/',
-   'https': 'http://sia-lb.telekom.de:8080/',
-   
+   'https': 'http://sia-lb.telekom.de:8080/',   
 }
 
 def get_weather(api_key, city):
@@ -18,14 +18,15 @@ def get_weather(api_key, city):
         humidity = main["humidity"]
         weather_description = weather_data["weather"][0]["description"]
         print(f"Weather in {city}:")
-        print(f"Temperature: {temperature}")
+        #we subtracted 273 in order to convert the temperature unit from kelvin to Celsius
+        print(f"Temperature: {temperature-273:.2f}°C")
         print(f"Humidity: {humidity}")
         print(f"Description: {weather_description}")
     else:
         print("City not found.")
 
-with open('secret.json','r')as file:
-    api_key = json.load(file)
+with open('keys.json','r')as file:
+    key = json.load(file)
    
 city_name = "berlin"
-get_weather(api_key.get('api_key'), city_name)
+get_weather(key.get('api_key'), city_name)
